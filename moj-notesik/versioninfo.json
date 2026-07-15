@@ -1,10 +1,9 @@
 {
-  "versionCode": 34,
-  "versionName": "0.15.0",
+  "versionCode": 35,
+  "versionName": "0.15.1",
   "apkUrl": "https://github.com/kajlo-dev/app-updates/releases/download/moj-notesik/moj-notesik.apk",
-  "securityFix": true,
+  "securityFix": false,
   "notes": [
-    "Naprawiono: okno \"Dostępna nowa wersja\" nie pokazywało listy zmian (była pusta) - notatki nowej wersji trzeba było przesyłać z serwera, nie odczytywać z appki, która o nią pyta",
-    "Nowość: Ustawienia → Zgłoś problem - wysyła e-mail z opisem, danymi diagnostycznymi (wersja appki, Android, model telefonu) i opcjonalnym zrzutem ekranu z galerii"
+    "Zgłoś problem: nowa druga opcja \"Zgłoś na GitHubie\" obok wysyłki mailem"
   ]
 }

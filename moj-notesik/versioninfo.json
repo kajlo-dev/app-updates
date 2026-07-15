@@ -1,9 +1,9 @@
 {
-  "versionCode": 35,
-  "versionName": "0.15.1",
+  "versionCode": 36,
+  "versionName": "0.15.2",
   "apkUrl": "https://github.com/kajlo-dev/app-updates/releases/download/moj-notesik/moj-notesik.apk",
   "securityFix": false,
   "notes": [
-    "Zgłoś problem: nowa druga opcja \"Zgłoś na GitHubie\" obok wysyłki mailem"
+    "Zgłoś problem: usunięto wysyłkę mailem, zostaje tylko zgłoszenie na GitHubie"
   ]
 }

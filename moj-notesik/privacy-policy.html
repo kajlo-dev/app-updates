@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Polityka prywatności — Mój Notesik</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.15rem; margin-top: 2em; }
+  .updated { color: #666; font-size: 0.9rem; }
+  code { background: #f2f2f2; padding: 0.1em 0.4em; border-radius: 3px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Polityka prywatności — Mój Notesik</h1>
+<p class="updated">Ostatnia aktualizacja: 15 lipca 2026</p>
+
+<p>Niniejsza polityka opisuje, jakie dane przetwarza aplikacja mobilna <strong>Mój Notesik</strong> (Android, identyfikator pakietu <code>dev.kajlodev.mojnotesik</code>), przeznaczona do organizowania notatek do programów zborowych i przemówień publicznych.</p>
+
+<h2>1. Dane przechowywane lokalnie</h2>
+<p>Notatki, pobrane programy, przemówienia oraz ustawienia aplikacji są przechowywane wyłącznie lokalnie na urządzeniu użytkownika (lokalna baza danych). Dane te nie są przesyłane na żaden serwer należący do dewelopera — deweloper nie posiada własnego backendu ani serwera, na którym gromadziłby dane użytkowników.</p>
+
+<h2>2. Kopia zapasowa i udostępnianie przez Google Drive (funkcja opcjonalna)</h2>
+<p>Aplikacja pozwala opcjonalnie zapisać kopię zapasową notatek na koncie Google Drive należącym do użytkownika oraz udostępniać wybrane notatki innym osobom. Funkcja ta jest w pełni opcjonalna i wymaga jawnej autoryzacji użytkownika przez Google.</p>
+<ul>
+  <li><strong>Zakres dostępu:</strong> aplikacja korzysta z zakresów <code>drive.file</code> (dostęp tylko do plików utworzonych przez samą aplikację) oraz <code>drive.readonly</code> (odczyt listy plików udostępnionych użytkownikowi, potrzebny do wyświetlenia zakładki „Udostępnione”). Aplikacja nie ma dostępu do innych plików użytkownika na Dysku Google.</li>
+  <li><strong>Gdzie trafiają dane:</strong> aplikacja tworzy na Dysku Google użytkownika folder <code>MojNotatnik</code> (z podfolderami na kongresy, zgromadzenia, wykłady i pliki udostępnione) i zapisuje tam notatki we własnym formacie pliku <code>.mwn</code> (skompresowany, nieczytelny jako zwykły tekst w innych aplikacjach). Cała komunikacja odbywa się bezpośrednio między urządzeniem użytkownika a serwerami Google — deweloper nie ma wglądu w te dane ani nie przechowuje ich kopii.</li>
+  <li><strong>Udostępnianie notatek:</strong> gdy użytkownik udostępnia notatkę innej osobie, aplikacja nadaje uprawnienie dostępu do konkretnego pliku na Dysku Google na podany przez użytkownika adres e-mail (funkcja udostępniania plików Google Drive). Deweloper nie pośredniczy w tym procesie i nie przechowuje adresów e-mail odbiorców.</li>
+  <li><strong>Tokeny dostępu:</strong> tokeny autoryzacji Google są pobierane na żądanie, krótkotrwałe i nie są nigdzie zapisywane poza urządzeniem użytkownika.</li>
+</ul>
+
+<h2>3. Sprawdzanie aktualizacji</h2>
+<p>Aplikacja okresowo (oraz na żądanie użytkownika) sprawdza dostępność nowej wersji, pobierając publiczny plik z informacją o wersji z serwisu GitHub. Zapytanie to nie zawiera żadnych danych osobowych ani identyfikujących urządzenie poza standardowymi informacjami technicznymi wysyłanymi automatycznie przy każdym żądaniu sieciowym (np. adres IP obsługiwany przez GitHub, poza kontrolą dewelopera).</p>
+
+<h2>4. Analityka</h2>
+<p>Aplikacja korzysta z <strong>Firebase Analytics</strong> (Google) do zbierania podstawowych, zagregowanych danych o użytkowaniu: skąd pochodzą instalacje (kraj/region), z jakich funkcji korzystają użytkownicy, ogólne dane o urządzeniu i wersji systemu. Dane te pomagają zrozumieć, jak aplikacja jest używana i skąd pochodzą użytkownicy.</p>
+<p>W przypadku użytkowników zidentyfikowanych jako dzieci (patrz punkt 10) Firebase Analytics działa w trybie ograniczonym zgodnym z zasadami Google Play dotyczącymi aplikacji rodzinnych: bez trwałych identyfikatorów reklamowych, bez profilowania i bez łączenia danych między aplikacjami.</p>
+
+<h2>5. Reklamy</h2>
+<p>W darmowej wersji aplikacji wyświetlane są reklamy dostarczane przez <strong>Google AdMob</strong> oraz — poprzez mediację reklam — inne certyfikowane sieci reklamowe. Treści reklam są ograniczone do kategorii odpowiednich dla rodzin i dzieci (bez hazardu, alkoholu, treści dla dorosłych itp.).</p>
+<p>Użytkownikom zidentyfikowanym jako dzieci wyświetlane są wyłącznie reklamy kontekstowe (niespersonalizowane) — bez śledzenia zachowania, bez trwałych identyfikatorów urządzenia i bez łączenia danych z innymi aplikacjami lub stronami, zgodnie z Google Play Families Policy oraz amerykańską ustawą COPPA. Pozostali użytkownicy mogą zostać poproszeni o zgodę na reklamy spersonalizowane (ekran zgody RODO/UMP) — bez zgody wyświetlane są wyłącznie reklamy niespersonalizowane.</p>
+<p>Wykupienie wersji płatnej (patrz punkt 6) wyłącza wyświetlanie reklam.</p>
+
+<h2>6. Płatności</h2>
+<p>Aplikacja oferuje płatną wersję (subskrypcja miesięczna lub zakup jednorazowy, z darmowym okresem próbnym) obsługiwaną przez <strong>Google Play Billing</strong>. Dane płatnicze (numer karty itp.) nie są nigdy przetwarzane ani przechowywane przez dewelopera — cały proces płatności obsługuje Google Play. Przed ekranem zakupu wyświetlany jest ekran kontrolny dla rodziców (parental gate), jeśli użytkownik jest zidentyfikowany jako dziecko.</p>
+
+<h2>7. Udostępnianie danych stronom trzecim</h2>
+<p>Deweloper nie sprzedaje, nie wynajmuje ani nie udostępnia danych użytkowników żadnym stronom trzecim poza podmiotami niezbędnymi do działania opisanych funkcji: Google (Google Drive API, Firebase Analytics, AdMob, Google Play Billing) oraz GitHub (wyłącznie sprawdzanie wersji aplikacji, punkt 3). Reklamodawcy i sieci reklamowe mogą otrzymywać ograniczone, niespersonalizowane dane techniczne niezbędne do wyświetlenia reklamy (np. ogólna kategoria treści, kraj) — w przypadku dzieci bez żadnych identyfikatorów pozwalających na śledzenie.</p>
+
+<h2>8. Zgodność z Google API Services User Data Policy</h2>
+<p>Korzystanie przez aplikację Mój Notesik z danych otrzymanych za pośrednictwem API Google jest zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, w tym z wymogami dotyczącymi ograniczonego wykorzystania danych (Limited Use requirements).</p>
+
+<h2>9. Usunięcie danych i konta</h2>
+<p>Najprostszy sposób: w aplikacji przejdź do <strong>Ustawienia → Strefa zagrożenia → Usuń wszystko</strong>. Po dwóch niezależnych potwierdzeniach funkcja ta trwale usuwa: wszystkie notatki, programy i wykłady zapisane na urządzeniu, folder <code>MojNotatnik</code> wraz z zawartością na Dysku Google użytkownika oraz cofa zgodę (autoryzację) aplikacji na dostęp do konta Google użytkownika. Funkcja ta działa również, jeśli użytkownik nie ma dostępu do aplikacji (np. odinstalował ją) — patrz alternatywne kroki poniżej.</p>
+<p>Alternatywnie, bez korzystania z aplikacji, użytkownik może samodzielnie:</p>
+<ul>
+  <li>usunąć dane lokalne, odinstalowując aplikację,</li>
+  <li>usunąć kopię zapasową na Dysku Google, usuwając folder <code>MojNotatnik</code> bezpośrednio w aplikacji Dysk Google,</li>
+  <li>cofnąć dostęp aplikacji do swojego konta Google w ustawieniach konta Google: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>,</li>
+  <li>zażądać usunięcia danych analitycznych lub danych konta, pisząc na adres kontaktowy podany w punkcie 12 (dotyczy w szczególności rodziców/opiekunów w imieniu dzieci).</li>
+</ul>
+<p>Czego nie da się usunąć w pełni automatycznie: aktywną subskrypcję trzeba anulować osobno w Google Play (Play Store → Subskrypcje), identyfikator reklamowy telefonu można usunąć w ustawieniach systemu Android (Ustawienia → Google → Reklamy), a pełne usunięcie danych analitycznych z kopii zapasowych po stronie Google może potrwać do ok. 2 miesięcy od żądania.</p>
+
+<h2>10. Dzieci i zgodność z COPPA / Google Play Families Policy</h2>
+<p>Aplikacja Mój Notesik jest zgłoszona w Google Play jako aplikacja skierowana także do dzieci i rodzin (Google Play Families Policy) i przestrzega amerykańskiej ustawy o ochronie prywatności dzieci w internecie (COPPA). W związku z tym:</p>
+<ul>
+  <li>od użytkowników zidentyfikowanych jako dzieci nie są zbierane dane osobowe wykraczające poza to, co niezbędne do działania aplikacji,</li>
+  <li>nie są wyświetlane reklamy spersonalizowane ani nie jest prowadzone profilowanie behawioralne dzieci,</li>
+  <li>przed ekranami zakupu lub udostępniania danych osobowych (np. adresu e-mail przy udostępnianiu notatki) wyświetlany jest ekran kontrolny dla rodziców (parental gate),</li>
+  <li>rodzice/opiekunowie mogą w każdej chwili poprosić o wgląd w dane dziecka, ich poprawienie lub usunięcie, kontaktując się na adres podany w punkcie 12.</li>
+</ul>
+
+<h2>11. Zmiany w polityce prywatności</h2>
+<p>W razie zmian w sposobie przetwarzania danych niniejsza polityka zostanie zaktualizowana, a data u góry strony zostanie odpowiednio zmieniona.</p>
+
+<h2>12. Kontakt</h2>
+<p>Pytania dotyczące niniejszej polityki prywatności prosimy kierować na adres: <a href="mailto:kajlo.dev@gmail.com">kajlo.dev@gmail.com</a>.</p>
+
+</body>
+</html>

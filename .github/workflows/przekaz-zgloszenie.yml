@@ -1,0 +1,30 @@
+name: Przekaz zgloszenie do repo z kodem appki
+
+# To repo (app-updates) jest publiczne - kazdy z kontem GitHub moze tu zglosic problem z appki
+# Moj Notesik (appka -> Ustawienia -> Zglos problem -> "Zglos na GitHubie"), bez potrzeby dostepu
+# do repo z kodem appki (ono jest prywatne). Ten automat kopiuje nowe zgloszenie do
+# kajlo-dev/moj-notesik, gdzie Claude moze je przeanalizowac na tle prawdziwych plikow appki
+# (patrz .github/workflows/claude-issue-analysis.yml w tamtym repo) - dzieki temu ewentualne
+# szczegoly techniczne (nazwy plikow, fragmenty kodu) w odpowiedzi Claude'a zostaja prywatne,
+# nie trafiaja do publicznego zgloszenia.
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Utworz zgloszenie w kajlo-dev/moj-notesik
+        env:
+          GH_TOKEN: ${{ secrets.MOJ_NOTESIK_ISSUES_TOKEN }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: |
+          {
+            echo "Zgloszenie od uzytkownika appki (oryginal: $ISSUE_URL)"
+            echo
+            echo "$ISSUE_BODY"
+          } > /tmp/issue-body.txt
+          gh issue create --repo kajlo-dev/moj-notesik --title "$ISSUE_TITLE" --body-file /tmp/issue-body.txt

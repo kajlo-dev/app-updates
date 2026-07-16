@@ -15,71 +15,40 @@
 <body>
 
 <h1>Polityka prywatności — Mój Notesik</h1>
-<p class="updated">Ostatnia aktualizacja: 15 lipca 2026</p>
+<p class="updated">Ostatnia aktualizacja: 16 lipca 2026</p>
 
-<p>Niniejsza polityka opisuje, jakie dane przetwarza aplikacja mobilna <strong>Mój Notesik</strong> (Android, identyfikator pakietu <code>dev.kajlodev.mojnotesik</code>), przeznaczona do organizowania notatek do programów zborowych i przemówień publicznych.</p>
+<p>Niniejsza polityka opisuje, jakie dane przetwarza aplikacja mobilna <strong>Mój Notesik</strong> (Android, identyfikator pakietu <code>dev.kajlodev.mojnotesik</code>), przeznaczona do organizowania notatek do programów zborowych i przemówień publicznych. Aplikacja jest prywatnym projektem jednego dewelopera — nie ma własnego serwera ani backendu.</p>
 
 <h2>1. Dane przechowywane lokalnie</h2>
-<p>Notatki, pobrane programy, przemówienia oraz ustawienia aplikacji są przechowywane wyłącznie lokalnie na urządzeniu użytkownika (lokalna baza danych). Dane te nie są przesyłane na żaden serwer należący do dewelopera — deweloper nie posiada własnego backendu ani serwera, na którym gromadziłby dane użytkowników.</p>
+<p>Notatki, pobrane programy, przemówienia oraz ustawienia aplikacji są przechowywane <strong>wyłącznie lokalnie</strong> na urządzeniu użytkownika (lokalna baza danych). Treść notatek nigdy nie opuszcza urządzenia — deweloper nie ma do niej żadnego wglądu ani dostępu.</p>
 
-<h2>2. Kopia zapasowa i udostępnianie przez Google Drive (funkcja opcjonalna)</h2>
-<p>Aplikacja pozwala opcjonalnie zapisać kopię zapasową notatek na koncie Google Drive należącym do użytkownika oraz udostępniać wybrane notatki innym osobom. Funkcja ta jest w pełni opcjonalna i wymaga jawnej autoryzacji użytkownika przez Google.</p>
-<ul>
-  <li><strong>Zakres dostępu:</strong> aplikacja korzysta z zakresów <code>drive.file</code> (dostęp tylko do plików utworzonych przez samą aplikację) oraz <code>drive.readonly</code> (odczyt listy plików udostępnionych użytkownikowi, potrzebny do wyświetlenia zakładki „Udostępnione”). Aplikacja nie ma dostępu do innych plików użytkownika na Dysku Google.</li>
-  <li><strong>Gdzie trafiają dane:</strong> aplikacja tworzy na Dysku Google użytkownika folder <code>MojNotatnik</code> (z podfolderami na kongresy, zgromadzenia, wykłady i pliki udostępnione) i zapisuje tam notatki we własnym formacie pliku <code>.mwn</code> (skompresowany, nieczytelny jako zwykły tekst w innych aplikacjach). Cała komunikacja odbywa się bezpośrednio między urządzeniem użytkownika a serwerami Google — deweloper nie ma wglądu w te dane ani nie przechowuje ich kopii.</li>
-  <li><strong>Udostępnianie notatek:</strong> gdy użytkownik udostępnia notatkę innej osobie, aplikacja zapisuje ją jako plik w swoim wewnętrznym formacie (<code>.mwn</code>) na urządzeniu i od razu otwiera systemowe okno wyboru aplikacji (komunikator, e-mail itp.) z tym plikiem jako załącznikiem — użytkownik samodzielnie wybiera odbiorcę i sposób wysyłki poza aplikacją. Ta funkcja nie korzysta z Dysku Google i deweloper nie ma żadnego wglądu w to, komu i czym notatka została udostępniona.</li>
-  <li><strong>Tokeny dostępu:</strong> tokeny autoryzacji Google są pobierane na żądanie, krótkotrwałe i nie są nigdzie zapisywane poza urządzeniem użytkownika.</li>
-</ul>
+<h2>2. Pobieranie programów z jw.org</h2>
+<p>Na zakładce „Lista” aplikacja pobiera z serwisu <strong>jw.org</strong> (oraz towarzyszącego mu <code>jw-cdn.org</code>) listę dostępnych programów zborowych i — na żądanie użytkownika — sam plik PDF wybranego programu, który jest następnie przetwarzany na urządzeniu. Jest to zwykłe pobranie publicznie dostępnych plików, analogiczne do otwarcia strony jw.org w przeglądarce — aplikacja nie wysyła przy tym żadnych danych osobowych.</p>
+<p>W Ustawieniach → Pobieranie danych można ograniczyć to pobieranie do samego Wi-Fi albo całkiem wyłączyć dostęp aplikacji do internetu (tryb offline) — wtedy aplikacja korzysta wyłącznie z ostatnio zapisanej listy i już pobranych programów.</p>
 
-<h2>3. Sprawdzanie aktualizacji</h2>
-<p>Aplikacja okresowo (oraz na żądanie użytkownika) sprawdza dostępność nowej wersji, pobierając publiczny plik z informacją o wersji z serwisu GitHub. Zapytanie to nie zawiera żadnych danych osobowych ani identyfikujących urządzenie poza standardowymi informacjami technicznymi wysyłanymi automatycznie przy każdym żądaniu sieciowym (np. adres IP obsługiwany przez GitHub, poza kontrolą dewelopera).</p>
+<h2>3. Zgłoszenie problemu (ręczne)</h2>
+<p>Ustawienia → Zgłoś problem pozwala opisać napotkany błąd. Aplikacja dołącza do zgłoszenia opis wpisany przez użytkownika oraz podstawowe dane techniczne: wersję aplikacji, wersję systemu Android i model urządzenia. Otwiera się przy tym przeglądarka z gotowym, jawnym (publicznie widocznym) zgłoszeniem w serwisie GitHub — wymaga to posiadania konta GitHub, a wysłanie zgłoszenia użytkownik potwierdza samodzielnie na stronie GitHuba. Zrzut ekranu nie jest dołączany automatycznie.</p>
 
-<h2>4. Zgłoszenie problemu</h2>
-<p>Aplikacja umożliwia zgłoszenie problemu w Ustawienia → Zgłoś problem. Aplikacja dołącza do zgłoszenia: opis problemu wpisany przez użytkownika i podstawowe dane techniczne (wersja aplikacji, wersja systemu Android, model urządzenia) — aplikacja nie ma żadnego automatycznego systemu zbierania zgłoszeń, logów ani crashy; funkcja działa wyłącznie na wyraźne działanie użytkownika i nic nie jest wysyłane automatycznie ani w tle.</p>
-<p>Aplikacja otwiera w przeglądarce gotowy formularz nowego, jawnego (publicznie widocznego) zgłoszenia w serwisie GitHub (wymaga posiadania konta GitHub). Zrzut ekranu nie jest dołączany automatycznie — użytkownik może go doczepić ręcznie na stronie zgłoszenia. Treść zgłoszenia (opis i dane techniczne) jest automatycznie kopiowana też do wewnętrznego, prywatnego repozytorium z kodem aplikacji, gdzie może zostać przeanalizowana — także przy pomocy narzędzia AI (Gemini, Google) — wyłącznie w celu ustalenia przyczyny zgłoszonego problemu i zaproponowania poprawki.</p>
+<h2>4. Dane diagnostyczne po awarii (opcjonalne)</h2>
+<p>Gdy aplikacja nieoczekiwanie się zamknie, zapisuje na urządzeniu krótki ślad techniczny awarii (nazwa błędu i miejsce w kodzie, w którym wystąpił). Przy kolejnym uruchomieniu, <strong>jeśli w Ustawieniach → Dane osobowe → Przesyłaj dane diagnostyczne wybrano „Zawsze”</strong> (domyślne ustawienie), aplikacja proponuje otwarcie gotowego zgłoszenia na GitHubie z tymi informacjami oraz tymi samymi danymi technicznymi co w punkcie 3. Wybranie „Nigdy” wyłącza tę propozycję całkowicie.</p>
+<p>W obu przypadkach aplikacja <strong>nigdy nie wysyła niczego automatycznie w tle</strong> — najwyżej otwiera przeglądarkę z przygotowaną treścią, a o faktycznym wysłaniu zawsze decyduje użytkownik. Ślad awarii nigdy nie zawiera treści notatek. Szczegóły: <a href="jak-wykorzystujemy-dane.html">Jak Mój Notesik wykorzystuje Twoje dane</a>.</p>
 
-<h2>5. Analityka</h2>
-<p>Aplikacja korzysta z <strong>Firebase Analytics</strong> (Google) do zbierania podstawowych, zagregowanych danych o użytkowaniu: skąd pochodzą instalacje (kraj/region), z jakich funkcji korzystają użytkownicy, ogólne dane o urządzeniu i wersji systemu. Dane te pomagają zrozumieć, jak aplikacja jest używana i skąd pochodzą użytkownicy.</p>
-<p>W przypadku użytkowników zidentyfikowanych jako dzieci (patrz punkt 11) Firebase Analytics działa w trybie ograniczonym zgodnym z zasadami Google Play dotyczącymi aplikacji rodzinnych: bez trwałych identyfikatorów reklamowych, bez profilowania i bez łączenia danych między aplikacjami.</p>
+<h2>5. Analiza zgłoszeń</h2>
+<p>Treść zgłoszeń wysłanych zgodnie z punktem 3 i 4 (opis, dane techniczne, ślad awarii) trafia do publicznego repozytorium <code>kajlo-dev/app-updates</code>, skąd automatycznie kopiowana jest też do prywatnego repozytorium z kodem aplikacji, gdzie może zostać przeanalizowana — również przy pomocy narzędzia AI (Google Gemini) — wyłącznie w celu ustalenia przyczyny problemu i zaproponowania poprawki.</p>
 
-<h2>6. Reklamy</h2>
-<p>W darmowej wersji aplikacji wyświetlane są reklamy dostarczane przez <strong>Google AdMob</strong> oraz — poprzez mediację reklam — inne certyfikowane sieci reklamowe. Treści reklam są ograniczone do kategorii odpowiednich dla rodzin i dzieci (bez hazardu, alkoholu, treści dla dorosłych itp.).</p>
-<p>Użytkownikom zidentyfikowanym jako dzieci wyświetlane są wyłącznie reklamy kontekstowe (niespersonalizowane) — bez śledzenia zachowania, bez trwałych identyfikatorów urządzenia i bez łączenia danych z innymi aplikacjami lub stronami, zgodnie z Google Play Families Policy oraz amerykańską ustawą COPPA. Pozostali użytkownicy mogą zostać poproszeni o zgodę na reklamy spersonalizowane (ekran zgody RODO/UMP) — bez zgody wyświetlane są wyłącznie reklamy niespersonalizowane.</p>
-<p>Wykupienie wersji płatnej (patrz punkt 7) wyłącza wyświetlanie reklam.</p>
+<h2>6. Reklamy, płatności, analityka</h2>
+<p>Aplikacja nie wyświetla żadnych reklam, nie zawiera płatnych funkcji ani subskrypcji i nie korzysta z żadnego narzędzia analitycznego (np. Google Analytics/Firebase) śledzącego sposób korzystania z aplikacji.</p>
 
-<h2>7. Płatności</h2>
-<p>Aplikacja oferuje płatną wersję (subskrypcja miesięczna lub zakup jednorazowy, z darmowym okresem próbnym) obsługiwaną przez <strong>Google Play Billing</strong>. Dane płatnicze (numer karty itp.) nie są nigdy przetwarzane ani przechowywane przez dewelopera — cały proces płatności obsługuje Google Play. Przed ekranem zakupu wyświetlany jest ekran kontrolny dla rodziców (parental gate), jeśli użytkownik jest zidentyfikowany jako dziecko.</p>
+<h2>7. Udostępnianie danych stronom trzecim</h2>
+<p>Deweloper nie sprzedaje, nie wynajmuje ani nie udostępnia danych użytkowników żadnym stronom trzecim. Jedyne podmioty, z którymi aplikacja się łączy, to jw.org/jw-cdn.org (punkt 2) oraz GitHub (punkty 3–5) — wyłącznie w zakresie opisanym powyżej.</p>
 
-<h2>8. Udostępnianie danych stronom trzecim</h2>
-<p>Deweloper nie sprzedaje, nie wynajmuje ani nie udostępnia danych użytkowników żadnym stronom trzecim poza podmiotami niezbędnymi do działania opisanych funkcji: Google (Google Drive API, Firebase Analytics, AdMob, Google Play Billing, Gemini API - patrz punkt 4) oraz GitHub (sprawdzanie wersji aplikacji - punkt 3; zgłaszanie problemów - punkt 4). Reklamodawcy i sieci reklamowe mogą otrzymywać ograniczone, niespersonalizowane dane techniczne niezbędne do wyświetlenia reklamy (np. ogólna kategoria treści, kraj) — w przypadku dzieci bez żadnych identyfikatorów pozwalających na śledzenie.</p>
+<h2>8. Usunięcie danych</h2>
+<p>W aplikacji: <strong>Ustawienia → Strefa zagrożenia → Usuń wszystko</strong>. Po dwóch niezależnych potwierdzeniach funkcja trwale usuwa wszystkie notatki, programy i wykłady zapisane na urządzeniu. Alternatywnie, dane lokalne znikają też po odinstalowaniu aplikacji — w obu przypadkach nie ma nic do usunięcia „po drugiej stronie”, bo aplikacja nie ma własnego serwera.</p>
 
-<h2>9. Zgodność z Google API Services User Data Policy</h2>
-<p>Korzystanie przez aplikację Mój Notesik z danych otrzymanych za pośrednictwem API Google jest zgodne z <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, w tym z wymogami dotyczącymi ograniczonego wykorzystania danych (Limited Use requirements).</p>
-
-<h2>10. Usunięcie danych i konta</h2>
-<p>Najprostszy sposób: w aplikacji przejdź do <strong>Ustawienia → Strefa zagrożenia → Usuń wszystko</strong>. Po dwóch niezależnych potwierdzeniach funkcja ta trwale usuwa: wszystkie notatki, programy i wykłady zapisane na urządzeniu, folder <code>MojNotatnik</code> wraz z zawartością na Dysku Google użytkownika oraz cofa zgodę (autoryzację) aplikacji na dostęp do konta Google użytkownika. Funkcja ta działa również, jeśli użytkownik nie ma dostępu do aplikacji (np. odinstalował ją) — patrz alternatywne kroki poniżej.</p>
-<p>Alternatywnie, bez korzystania z aplikacji, użytkownik może samodzielnie:</p>
-<ul>
-  <li>usunąć dane lokalne, odinstalowując aplikację,</li>
-  <li>usunąć kopię zapasową na Dysku Google, usuwając folder <code>MojNotatnik</code> bezpośrednio w aplikacji Dysk Google,</li>
-  <li>cofnąć dostęp aplikacji do swojego konta Google w ustawieniach konta Google: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>,</li>
-  <li>zażądać usunięcia danych analitycznych lub danych konta, pisząc na adres kontaktowy podany w punkcie 13 (dotyczy w szczególności rodziców/opiekunów w imieniu dzieci).</li>
-</ul>
-<p>Czego nie da się usunąć w pełni automatycznie: aktywną subskrypcję trzeba anulować osobno w Google Play (Play Store → Subskrypcje), identyfikator reklamowy telefonu można usunąć w ustawieniach systemu Android (Ustawienia → Google → Reklamy), a pełne usunięcie danych analitycznych z kopii zapasowych po stronie Google może potrwać do ok. 2 miesięcy od żądania.</p>
-
-<h2>11. Dzieci i zgodność z COPPA / Google Play Families Policy</h2>
-<p>Aplikacja Mój Notesik jest zgłoszona w Google Play jako aplikacja skierowana także do dzieci i rodzin (Google Play Families Policy) i przestrzega amerykańskiej ustawy o ochronie prywatności dzieci w internecie (COPPA). W związku z tym:</p>
-<ul>
-  <li>od użytkowników zidentyfikowanych jako dzieci nie są zbierane dane osobowe wykraczające poza to, co niezbędne do działania aplikacji,</li>
-  <li>nie są wyświetlane reklamy spersonalizowane ani nie jest prowadzone profilowanie behawioralne dzieci,</li>
-  <li>przed ekranami zakupu lub udostępniania danych osobowych (np. adresu e-mail przy udostępnianiu notatki) wyświetlany jest ekran kontrolny dla rodziców (parental gate),</li>
-  <li>rodzice/opiekunowie mogą w każdej chwili poprosić o wgląd w dane dziecka, ich poprawienie lub usunięcie, kontaktując się na adres podany w punkcie 13.</li>
-</ul>
-
-<h2>12. Zmiany w polityce prywatności</h2>
+<h2>9. Zmiany w polityce prywatności</h2>
 <p>W razie zmian w sposobie przetwarzania danych niniejsza polityka zostanie zaktualizowana, a data u góry strony zostanie odpowiednio zmieniona.</p>
 
-<h2>13. Kontakt</h2>
+<h2>10. Kontakt</h2>
 <p>Pytania dotyczące niniejszej polityki prywatności prosimy kierować na adres: <a href="mailto:kajlo.dev@gmail.com">kajlo.dev@gmail.com</a>.</p>
 
 </body>

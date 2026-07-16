@@ -30,25 +30,31 @@
 <p>Ustawienia → Zgłoś problem pozwala opisać napotkany błąd. Aplikacja dołącza do zgłoszenia opis wpisany przez użytkownika oraz podstawowe dane techniczne: wersję aplikacji, wersję systemu Android i model urządzenia. Otwiera się przy tym przeglądarka z gotowym, jawnym (publicznie widocznym) zgłoszeniem w serwisie GitHub — wymaga to posiadania konta GitHub, a wysłanie zgłoszenia użytkownik potwierdza samodzielnie na stronie GitHuba. Zrzut ekranu nie jest dołączany automatycznie.</p>
 
 <h2>4. Dane diagnostyczne po awarii (opcjonalne)</h2>
-<p>Gdy aplikacja nieoczekiwanie się zamknie, zapisuje na urządzeniu krótki ślad techniczny awarii (nazwa błędu i miejsce w kodzie, w którym wystąpił). Przy kolejnym uruchomieniu, <strong>jeśli w Ustawieniach → Dane osobowe → Przesyłaj dane diagnostyczne wybrano „Zawsze”</strong> (domyślne ustawienie), aplikacja proponuje otwarcie gotowego zgłoszenia na GitHubie z tymi informacjami oraz tymi samymi danymi technicznymi co w punkcie 3. Wybranie „Nigdy” wyłącza tę propozycję całkowicie.</p>
-<p>W obu przypadkach aplikacja <strong>nigdy nie wysyła niczego automatycznie w tle</strong> — najwyżej otwiera przeglądarkę z przygotowaną treścią, a o faktycznym wysłaniu zawsze decyduje użytkownik. Ślad awarii nigdy nie zawiera treści notatek. Szczegóły: <a href="jak-wykorzystujemy-dane.html">Jak Mój Notesik wykorzystuje Twoje dane</a>.</p>
+<p>Gdy aplikacja nieoczekiwanie się zamknie, zapisuje na urządzeniu krótki ślad techniczny awarii (nazwa błędu i miejsce w kodzie, w którym wystąpił). W Ustawieniach → Dane osobowe → Przesyłaj dane diagnostyczne można wybrać jedną z trzech opcji: <strong>Zawsze</strong> (domyślne ustawienie — po ponownym uruchomieniu aplikacja od razu otwiera przeglądarkę z gotowym zgłoszeniem na GitHubie), <strong>Pytaj za każdym razem</strong> (aplikacja najpierw pyta w oknie dialogowym, czy zgłosić) albo <strong>Nigdy</strong> (propozycja jest całkowicie wyłączona). Zgłoszenie zawiera te same dane techniczne co w punkcie 3.</p>
+<p>W każdym przypadku aplikacja <strong>nigdy nie wysyła niczego automatycznie w tle</strong> — najwyżej otwiera przeglądarkę z przygotowaną treścią, a o faktycznym wysłaniu na GitHubie zawsze decyduje użytkownik, potwierdzając to samodzielnie na miejscu. Ślad awarii nigdy nie zawiera treści notatek. Szczegóły: <a href="jak-wykorzystujemy-dane.html">Jak Mój Notesik wykorzystuje Twoje dane</a>.</p>
 
 <h2>5. Analiza zgłoszeń</h2>
 <p>Treść zgłoszeń wysłanych zgodnie z punktem 3 i 4 (opis, dane techniczne, ślad awarii) trafia do publicznego repozytorium <code>kajlo-dev/app-updates</code>, skąd automatycznie kopiowana jest też do prywatnego repozytorium z kodem aplikacji, gdzie może zostać przeanalizowana — również przy pomocy narzędzia AI (Google Gemini) — wyłącznie w celu ustalenia przyczyny problemu i zaproponowania poprawki.</p>
 
-<h2>6. Reklamy, płatności, analityka</h2>
-<p>Aplikacja nie wyświetla żadnych reklam, nie zawiera płatnych funkcji ani subskrypcji i nie korzysta z żadnego narzędzia analitycznego (np. Google Analytics/Firebase) śledzącego sposób korzystania z aplikacji.</p>
+<h2>6. Reklamy</h2>
+<p>W darmowej wersji aplikacji wyświetlane są reklamy dostarczane przez <strong>Google AdMob</strong>. Treści reklam są ograniczone do kategorii odpowiednich dla rodzin i dzieci (bez hazardu, alkoholu, treści dla dorosłych itp.) — reklamy są kontekstowe, nie śledzą zachowania użytkownika między aplikacjami ani stronami. Wykupienie wersji płatnej (patrz punkt 7) wyłącza wyświetlanie reklam.</p>
 
-<h2>7. Udostępnianie danych stronom trzecim</h2>
-<p>Deweloper nie sprzedaje, nie wynajmuje ani nie udostępnia danych użytkowników żadnym stronom trzecim. Jedyne podmioty, z którymi aplikacja się łączy, to jw.org/jw-cdn.org (punkt 2) oraz GitHub (punkty 3–5) — wyłącznie w zakresie opisanym powyżej.</p>
+<h2>7. Płatności</h2>
+<p>Aplikacja oferuje płatną wersję (subskrypcja miesięczna lub zakup jednorazowy, z darmowym okresem próbnym) obsługiwaną przez <strong>Google Play Billing</strong>. Dane płatnicze (numer karty itp.) nie są nigdy przetwarzane ani przechowywane przez dewelopera — cały proces płatności obsługuje Google Play.</p>
 
-<h2>8. Usunięcie danych</h2>
-<p>W aplikacji: <strong>Ustawienia → Strefa zagrożenia → Usuń wszystko</strong>. Po dwóch niezależnych potwierdzeniach funkcja trwale usuwa wszystkie notatki, programy i wykłady zapisane na urządzeniu. Alternatywnie, dane lokalne znikają też po odinstalowaniu aplikacji — w obu przypadkach nie ma nic do usunięcia „po drugiej stronie”, bo aplikacja nie ma własnego serwera.</p>
+<h2>8. Analityka</h2>
+<p>Aplikacja nie korzysta z żadnego narzędzia analitycznego (np. Google Analytics/Firebase) śledzącego sposób korzystania z aplikacji.</p>
 
-<h2>9. Zmiany w polityce prywatności</h2>
+<h2>9. Udostępnianie danych stronom trzecim</h2>
+<p>Deweloper nie sprzedaje, nie wynajmuje ani nie udostępnia danych użytkowników żadnym stronom trzecim poza podmiotami niezbędnymi do działania opisanych funkcji: jw.org/jw-cdn.org (punkt 2), GitHub (punkty 3–5) oraz Google (AdMob — punkt 6, Google Play Billing — punkt 7), wyłącznie w zakresie opisanym powyżej.</p>
+
+<h2>10. Usunięcie danych</h2>
+<p>W aplikacji: <strong>Ustawienia → Strefa zagrożenia → Usuń wszystko</strong>. Po dwóch niezależnych potwierdzeniach funkcja trwale usuwa wszystkie notatki, programy i wykłady zapisane na urządzeniu. Alternatywnie, dane lokalne znikają też po odinstalowaniu aplikacji — w obu przypadkach nie ma nic do usunięcia „po drugiej stronie”, bo aplikacja nie ma własnego serwera. Aktywną subskrypcję trzeba anulować osobno w Google Play (Play Store → Subskrypcje).</p>
+
+<h2>11. Zmiany w polityce prywatności</h2>
 <p>W razie zmian w sposobie przetwarzania danych niniejsza polityka zostanie zaktualizowana, a data u góry strony zostanie odpowiednio zmieniona.</p>
 
-<h2>10. Kontakt</h2>
+<h2>12. Kontakt</h2>
 <p>Pytania dotyczące niniejszej polityki prywatności prosimy kierować na adres: <a href="mailto:kajlo.dev@gmail.com">kajlo.dev@gmail.com</a>.</p>
 
 </body>

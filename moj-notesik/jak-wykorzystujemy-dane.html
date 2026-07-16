@@ -29,19 +29,25 @@
 <p>Gdy w Ustawieniach dotkniesz „Zgłoś problem”, opisujesz, co się stało, a aplikacja dokłada do tego wersję aplikacji, wersję Androida i model telefonu — to jedyne dane techniczne, jakie kiedykolwiek dołączamy. Otwiera się przeglądarka z gotowym zgłoszeniem na GitHubie, a Ty sam decydujesz, czy je wysłać.</p>
 
 <h2>Dane diagnostyczne po awarii</h2>
-<p>To jedyna rzecz na tej stronie, która dzieje się bez Twojego działania w danej chwili — dlatego można ją wyłączyć.</p>
-<p>Gdy aplikacja się „wywróci” (nieoczekiwanie zamknie), zapisuje na telefonie krótką techniczną notatkę o tym, co poszło nie tak — samą nazwę błędu i miejsce w kodzie, nigdy treść Twoich notatek. Przy następnym otwarciu aplikacji, jeśli masz włączone <strong>Ustawienia → Dane osobowe → Przesyłaj dane diagnostyczne: Zawsze</strong>, zapytamy Cię, czy chcesz to zgłosić — a jeśli się zgodzisz, otworzy się przeglądarka z gotowym zgłoszeniem na GitHubie, tak samo jak przy ręcznym zgłoszeniu problemu.</p>
-<p>Wybranie „Nigdy” wyłącza to pytanie całkowicie — aplikacja po prostu zapomina o awarii i nic nie proponuje. W żadnym wypadku aplikacja nie wysyła niczego sama, bez otwarcia przeglądarki i Twojego potwierdzenia na miejscu.</p>
+<p>To jedyna rzecz na tej stronie, która może się zadziać bez Twojego potwierdzenia w danej chwili — dlatego można to dopasować albo wyłączyć w <strong>Ustawienia → Dane osobowe → Przesyłaj dane diagnostyczne</strong>, na trzy sposoby:</p>
+<ul>
+  <li><strong>Zawsze</strong> (domyślnie) — po ponownym otwarciu aplikacji od razu otwiera się przeglądarka z gotowym zgłoszeniem na GitHubie.</li>
+  <li><strong>Pytaj za każdym razem</strong> — aplikacja najpierw pyta w okienku, czy zgłosić, i dopiero po Twojej zgodzie otwiera przeglądarkę.</li>
+  <li><strong>Nigdy</strong> — aplikacja po prostu zapomina o awarii i nic nie proponuje.</li>
+</ul>
+<p>Ślad awarii to sama nazwa błędu i miejsce w kodzie, w którym wystąpił — nigdy treść Twoich notatek. W żadnym z trzech trybów aplikacja nie wysyła niczego sama w tle — najwyżej otwiera przeglądarkę z gotową treścią, a decyzję o faktycznym wysłaniu na GitHubie zawsze podejmujesz Ty, na miejscu.</p>
 
 <h2>Co się dzieje ze zgłoszeniami</h2>
 <p>Zgłoszenia (ręczne i po awarii) trafiają do publicznego repozytorium na GitHubie, skąd trafiają też do prywatnego repozytorium z kodem aplikacji — czasem korzystam tam z pomocy AI (Google Gemini), żeby szybciej znaleźć przyczynę problemu. Nic z tego nie jest sprzedawane ani wykorzystywane do niczego innego niż naprawianie aplikacji.</p>
 
+<h2>Reklamy i płatności</h2>
+<p>W darmowej wersji aplikacja pokazuje reklamy (Google AdMob) — dobrane tak, żeby były odpowiednie dla rodzin i dzieci, bez hazardu, alkoholu czy treści dla dorosłych, i bez śledzenia Cię między innymi aplikacjami czy stronami. Jeśli wolisz aplikację bez reklam, można wykupić wersję płatną (subskrypcja albo zakup jednorazowy, z darmowym okresem próbnym) przez Google Play — numeru karty ani innych danych płatniczych nigdy nie widzimy, całość obsługuje Google Play.</p>
+
 <h2>Czego aplikacja nie robi</h2>
 <ul>
-  <li>Nie wyświetla reklam.</li>
-  <li>Nie ma płatnych funkcji ani subskrypcji.</li>
   <li>Nie korzysta z żadnego narzędzia analitycznego śledzącego, jak z niej korzystasz.</li>
   <li>Nie wysyła niczego automatycznie, bez otwarcia przeglądarki i Twojej decyzji na miejscu.</li>
+  <li>Nie sprzedaje ani nie udostępnia Twoich danych nikomu poza tym, co opisano wyżej.</li>
 </ul>
 
 <p>Pytania? Pisz śmiało: <a href="mailto:kajlo.dev@gmail.com">kajlo.dev@gmail.com</a>.</p>

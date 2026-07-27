@@ -29,9 +29,20 @@
     status.textContent = 'Brak tokenu potwierdzającego w linku.';
   } else {
     var url = 'https://script.google.com/macros/s/AKfycbx0CKI7w4pQQejmhgDfTjTgsOGq-RdJm_4Ul46QIAUoAmnkCRUbNCJ4XrgYij_iNpo/exec?potwierdz=' + encodeURIComponent(token);
-    fetch(url).finally(function () {
+    var pokazany = false;
+    function pokazWynik() {
+      if (pokazany) return;
+      pokazany = true;
       status.textContent = 'ZOSTAŁEŚ DODANY';
-    });
+    }
+    // no-cors: odpowiedź serwera nie ma nagłówków CORS, więc w zwykłym
+    // trybie fetch() zgłosiłby błąd bez możliwości odczytania treści —
+    // no-cors gwarantuje, że żądanie się wyśle i obietnica się rozwiąże,
+    // niezależnie od tego. setTimeout to dodatkowe zabezpieczenie na
+    // wypadek gdyby fetch w ogóle się nie wykonał (stary/nietypowy
+    // przeglądarkowy WebView).
+    fetch(url, { mode: 'no-cors' }).finally(pokazWynik);
+    setTimeout(pokazWynik, 4000);
   }
 </script>
 </body>

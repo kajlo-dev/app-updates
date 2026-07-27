@@ -10,44 +10,26 @@
 </style>
 </head>
 <body>
-<h1 id="status">Trwa przetwarzanie…</h1>
+<h1>ZOSTAŁEŚ DODANY</h1>
 <script>
   // Strona na GitHub Pages (nie script.google.com!) — omija problem, że
-  // Android potrafi przechwytywać KAŻDĄ nawigację (także przekierowanie
-  // JS) do domeny google.com/script.google.com aplikacją Dysk/Dokumenty,
-  // pokazując własny błąd "Nie udało się otworzyć pliku". Zamiast
-  // przekierowywać przeglądarkę, wysyłamy zapytanie w tle (fetch — to nie
-  // jest nawigacja, więc nie jest przechwytywane) do Web Appki Apps
-  // Script, która dopisuje głosiciela do listy (patrz
-  // potwierdzRejestracje_() w wozek/src/FormHandler.gs), i tu, na tej
-  // stronie, po prostu pokazujemy duży napis — użytkownik nigdy nie
-  // opuszcza tej strony.
+  // Android potrafi przechwytywać KAŻDĄ nawigację do domeny
+  // google.com/script.google.com aplikacją Dysk/Dokumenty, pokazując
+  // własny błąd "Nie udało się otworzyć pliku" (nawet po przekierowaniu
+  // JS-em, nie tylko po bezpośrednim kliknięciu linku). Napis "ZOSTAŁEŚ
+  // DODANY" pokazuje się od razu, statycznie, niezależnie od tego, czy
+  // poniższe wywołanie w tle się powiedzie — nie ma tu żadnego stanu
+  // pośredniego, który mógłby "zawisnąć" w jakiejś przeglądarce.
+  //
+  // Samo dopisanie do listy głosicieli (patrz potwierdzRejestracje_() w
+  // wozek/src/FormHandler.gs) następuje przez zwykłe wczytanie adresu jako
+  // "obrazka" — to tylko żądanie GET, które i tak dociera do serwera i
+  // wykonuje kod, niezależnie od tego, czy przeglądarka faktycznie
+  // rozpozna odpowiedź jako obrazek.
   var token = new URLSearchParams(window.location.search).get('t');
-  var status = document.getElementById('status');
-
-  if (!token) {
-    status.textContent = 'Brak tokenu potwierdzającego w linku.';
-  } else {
-    var url = 'https://script.google.com/macros/s/AKfycbx0CKI7w4pQQejmhgDfTjTgsOGq-RdJm_4Ul46QIAUoAmnkCRUbNCJ4XrgYij_iNpo/exec?potwierdz=' + encodeURIComponent(token);
-    var pokazany = false;
-    function pokazWynik() {
-      if (pokazany) return;
-      pokazany = true;
-      status.textContent = 'ZOSTAŁEŚ DODANY';
-    }
-    // Zamiast fetch() (różne zachowanie/wsparcie w różnych przeglądarkach
-    // mobilnych i WebView) — stary, bardzo szeroko wspierany trik: wczytanie
-    // adresu jako "obrazka". To i tak tylko zwykłe żądanie GET, które
-    // dociera do serwera i wykonuje doGet() (patrz FormHandler.gs), a
-    // przeglądarka nie wymaga, żeby to faktycznie był obrazek — jeśli nie
-    // jest, po prostu odpali się onerror zamiast onload. Liczy się to, że
-    // request i tak wystartował. setTimeout to dodatkowe zabezpieczenie,
-    // gdyby żaden z powyższych uchwytów się nie odpalił.
+  if (token) {
     var pinger = new Image();
-    pinger.onload = pokazWynik;
-    pinger.onerror = pokazWynik;
-    pinger.src = url;
-    setTimeout(pokazWynik, 4000);
+    pinger.src = 'https://script.google.com/macros/s/AKfycbx0CKI7w4pQQejmhgDfTjTgsOGq-RdJm_4Ul46QIAUoAmnkCRUbNCJ4XrgYij_iNpo/exec?potwierdz=' + encodeURIComponent(token);
   }
 </script>
 </body>

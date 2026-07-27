@@ -35,13 +35,18 @@
       pokazany = true;
       status.textContent = 'ZOSTAŁEŚ DODANY';
     }
-    // no-cors: odpowiedź serwera nie ma nagłówków CORS, więc w zwykłym
-    // trybie fetch() zgłosiłby błąd bez możliwości odczytania treści —
-    // no-cors gwarantuje, że żądanie się wyśle i obietnica się rozwiąże,
-    // niezależnie od tego. setTimeout to dodatkowe zabezpieczenie na
-    // wypadek gdyby fetch w ogóle się nie wykonał (stary/nietypowy
-    // przeglądarkowy WebView).
-    fetch(url, { mode: 'no-cors' }).finally(pokazWynik);
+    // Zamiast fetch() (różne zachowanie/wsparcie w różnych przeglądarkach
+    // mobilnych i WebView) — stary, bardzo szeroko wspierany trik: wczytanie
+    // adresu jako "obrazka". To i tak tylko zwykłe żądanie GET, które
+    // dociera do serwera i wykonuje doGet() (patrz FormHandler.gs), a
+    // przeglądarka nie wymaga, żeby to faktycznie był obrazek — jeśli nie
+    // jest, po prostu odpali się onerror zamiast onload. Liczy się to, że
+    // request i tak wystartował. setTimeout to dodatkowe zabezpieczenie,
+    // gdyby żaden z powyższych uchwytów się nie odpalił.
+    var pinger = new Image();
+    pinger.onload = pokazWynik;
+    pinger.onerror = pokazWynik;
+    pinger.src = url;
     setTimeout(pokazWynik, 4000);
   }
 </script>

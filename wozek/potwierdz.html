@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Wózek — potwierdzenie rejestracji</title>
+<meta name="robots" content="noindex">
+</head>
+<body>
+<p>Trwa przekierowanie…</p>
+<script>
+  // Prosta strona pośrednia: przekazuje token z parametru "t" dalej do
+  // Web Appki Apps Script (?potwierdz=<token>). Cel: link w e-mailu
+  // potwierdzającym rejestrację (patrz wozek/src/FormHandler.gs,
+  // skrocUrl_() w wozek/src/Utils.gs) ma być w domenie kajlo-dev.github.io,
+  // nie script.google.com — na Androidzie dotknięcie linku do domeny
+  // google.com/script.google.com bywa przechwytywane przez aplikację
+  // Dysk/Dokumenty zamiast otwierać się w przeglądarce, przez co
+  // użytkownik widział błąd "Nie udało się otworzyć pliku" mimo że
+  // rejestracja i tak się udawała po stronie serwera. Ta strona nie jest
+  // przez te aplikacje przechwytywana, więc zawsze otwiera się normalnie.
+  var token = new URLSearchParams(window.location.search).get('t');
+  if (token) {
+    window.location.replace(
+      'https://script.google.com/macros/s/AKfycbx0CKI7w4pQQejmhgDfTjTgsOGq-RdJm_4Ul46QIAUoAmnkCRUbNCJ4XrgYij_iNpo/exec?potwierdz=' + encodeURIComponent(token)
+    );
+  } else {
+    document.body.textContent = 'Brak tokenu potwierdzającego w linku.';
+  }
+</script>
+</body>
+</html>
